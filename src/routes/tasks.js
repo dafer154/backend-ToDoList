@@ -1,4 +1,4 @@
-  
+
 const express = require('express');
 const tasks = express.Router();
 const tasksController = require("../controllers/tasks");
@@ -7,7 +7,7 @@ const tasksController = require("../controllers/tasks");
 tasks.post("/add", tasksController.createTask);
 tasks.get("/getAll", tasksController.getTasks);
 tasks.delete("/:id", tasksController.deleteTask);
-// notes.put("/notes/:id", notesController.updateNotes);
-// notes.get("/notes/:id", notesController.getNoteById);
+tasks.put("/:id", tasksController.updateTasks);
+tasks.get("/:id", tasksController.getTaskById);
 
 module.exports = tasks;

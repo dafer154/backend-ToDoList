@@ -5,8 +5,8 @@ const userController = require("../controllers/users");
 // users
 users.post("/add", userController.createUser);
 users.get("/getAll", userController.getUser);
-// users.put("/users/:id", userController.updateUser);
-// users.delete("/users/:id", userController.delete);
-// users.get("/users/:id", userController.getUserById);
+users.put("/:id", userController.updateUser);
+users.delete("/:id", userController.delete);
+users.get("/:id", userController.getUserById);
 
 module.exports = users;
