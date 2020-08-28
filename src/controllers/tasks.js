@@ -39,7 +39,7 @@ tasksController.updateTasks = async (req, res) => {
     const { id } = req.params;
     const task = req.body;
     try {
-        const newTask = await Note.findOneAndUpdate(
+        const newTask = await Task.findOneAndUpdate(
             { _id: id },
             {
                 title: task.title,
