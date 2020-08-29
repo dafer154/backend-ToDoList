@@ -63,7 +63,7 @@ userController.delete = async (req, res) => {
 
 userController.searchUser = async (req, res) => {
     try{
-        const userSearch = await User.find({username: { $regex: req.body.query} })
+        const userSearch = await User.find({username: new RegExp(`^${req.body.query}`, 'i') })
         res.status(200).json({ message: "ok", body: userSearch });
     } catch (e) {
         res.status(400).json({ message: "bad request", e: e });
