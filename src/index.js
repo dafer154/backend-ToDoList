@@ -1,32 +1,47 @@
-const express = require('express');
-const path = require('path');
-const cors = require("./middlewares/cors")
-require("./database");
+//const express = require('express');
+//const path = require('path');
+//const cors = require("./middlewares/cors")
+
+//require("./database"); //ESTO VA AQUI
+//require('dotenv').config() //ESTO VA AQUI
 //Routes
-const tasks = require("./routes/tasks");
-const users = require("./routes/users");
-
-require('dotenv').config()
+//const tasks = require("./routes/tasks");
+//const users = require("./routes/users");
 
 
-const app = express();
+
+
+//const app = express();
 
 //settings
-app.set('port', process.env.PORT || 4000);
+//app.set('port', process.env.PORT || 4000);
 
 //Middlewares
-app.use(express.json());
-app.use(cors({ origin: true }));
-app.options("*", cors());
+//app.use(express.json());
+//app.use(cors({ origin: true }));
+//app.options("*", cors());
 
 //Routes
-app.use('/tasks', tasks);
-app.use('/users', users);
+//app.use('/tasks', tasks);
+//app.use('/users', users);
 
 //Static files
-app.use(express.static(path.join(__dirname, 'public')))
+//app.use(express.static(path.join(__dirname, 'public')))
 
 //start server
-app.listen(app.get('port'), () => {
-    console.log(`Server on port ${app.get('port')}`);
-});
+
+// app.listen(app.get('port'), () => {
+//     console.log(`Server on port ${app.get('port')}`);
+// });
+
+const app = require("./app");
+require("dotenv").config();
+require("./database");
+
+const main = () => {
+    app.listen(app.get("port"), () => {
+        console.log("Server is runnig on", `https://localhost:${app.get("port")}`);
+    });
+};
+
+main();
