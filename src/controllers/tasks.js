@@ -65,6 +65,22 @@ tasksController.deleteTask = async (req, res) => {
     }
 };
 
+tasksController.unassignUser = async (req, res) => {
+    const { id } = req.params;
+    console.log("OEEE", id)
+    try {
+        const newTask = await Task.findOneAndUpdate(
+            { _id: id },
+            {
+                author: '',
+            }
+        );
+        res.status(200).json({ message: "ok", body: newTask });
+    } catch (e) {
+        res.status(400).json({ message: "error", exception: e });
+    }
+};
+
 
 
 module.exports = tasksController;

@@ -13,4 +13,6 @@ const UserSchema = new Schema(
 }
 );
 
+UserSchema.index({'$**': 'username'});
+
 module.exports = model("User", UserSchema);
