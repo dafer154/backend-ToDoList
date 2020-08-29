@@ -6,6 +6,8 @@ require("./database");
 const tasks = require("./routes/tasks");
 const users = require("./routes/users");
 
+require('dotenv').config()
+
 
 const app = express();
 
