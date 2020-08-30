@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("./middlewares/cors")
-const api = require("./routes/index");
 const path = require('path');
 
 const app = express();
@@ -17,14 +16,10 @@ const users = require("./routes/users");
 app.use(express.static(path.join(__dirname, 'public')))
 
 //Routes
-//app.use('/api', Object.values(api));
-
 app.use('/tasks', tasks);
 app.use('/users', users);
 
 //MAIN
 app.get('/', (req, res) => { res.send('REST API - MEAN'); });
-
-
 
 module.exports = app;

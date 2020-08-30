@@ -17,7 +17,6 @@ userController.createUser = async (req, res) => {
             username: user.username,
         });
         await newUser.save();
-        console.log("Saved user");
         res.status(200).json({ message: "ok", body: newUser });
     } catch (e) {
         res.status(400).json({ message: "bad request", e: e });
@@ -36,7 +35,6 @@ userController.getUserById = async (req, res) => {
 
 userController.updateUser = async (req, res) => {
     const { id } = req.params;
-    console.log(id);
     const user = req.body;
     try {
         const newUser = await User.findOneAndUpdate(
@@ -62,8 +60,8 @@ userController.delete = async (req, res) => {
 };
 
 userController.searchUser = async (req, res) => {
-    try{
-        const userSearch = await User.find({username: new RegExp(`^${req.body.query}`, 'i') })
+    try {
+        const userSearch = await User.find({ username: new RegExp(`^${req.body.query}`, 'i') })
         res.status(200).json({ message: "ok", body: userSearch });
     } catch (e) {
         res.status(400).json({ message: "bad request", e: e });
