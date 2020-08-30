@@ -9,6 +9,7 @@ tasks.get("/getAll", tasksController.getTasks);
 tasks.delete("/:id", tasksController.deleteTask);
 tasks.put("/:id", tasksController.updateTasks);
 tasks.put("/unassignUser/:id", tasksController.unassignUser);
+tasks.post("/search", tasksController.searchTasks);
 tasks.get("/:id", tasksController.getTaskById);
 
 module.exports = tasks;

@@ -81,6 +81,17 @@ tasksController.unassignUser = async (req, res) => {
     }
 };
 
+tasksController.searchTasks = async (req, res) => {
+    
+    const {status, query} = req.body
+    try{
+        const taskSearch = await Task.find({ $and: [ { status:  status}, { title: new RegExp(`^${query}`, 'i') } ] })
+        res.status(200).json({ message: "ok", body: taskSearch });
+    } catch (e) {
+        res.status(400).json({ message: "bad request", e: e });
+    }
+}
+
 
 
 module.exports = tasksController;
