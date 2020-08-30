@@ -5,10 +5,10 @@ const tasksController = require("../controllers/tasks");
 
 // notes
 tasks.post("/add", tasksController.createTask);
-tasks.get("/getAll", tasksController.getTasks);
-tasks.delete("/:id", tasksController.deleteTask);
-tasks.put("/:id", tasksController.updateTasks);
-tasks.put("/unassignUser/:id", tasksController.unassignUser);
+tasks.get("/", tasksController.getTasks);
+tasks.delete("/delete/:id", tasksController.deleteTask);
+tasks.put("/edit/:id", tasksController.updateTasks);
+tasks.put("/unassign/:id", tasksController.unassignUser);
 tasks.post("/search", tasksController.searchTasks);
 tasks.get("/:id", tasksController.getTaskById);
 

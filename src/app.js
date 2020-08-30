@@ -20,6 +20,6 @@ app.use('/tasks', tasks);
 app.use('/users', users);
 
 //MAIN
-app.get('/', (req, res) => { res.send('REST API - MEAN'); });
+app.get('/', (req, res) => { res.send('REST API - To Do List'); });
 
 module.exports = app;

@@ -1,13 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# To Do List- Backend
 
-## Available Scripts
+### [Deployment server](https://condor-backend-todolist.herokuapp.com/)
 
-In the project directory, you can run:
+## Setup
 
-### `npm run dev`
+### NPM Install 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:4000](http://localhost:4000) to view it in the browser.
+To run this project, install it locally using npm:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
+$ git clone https://github.com/dafer154/backend-ToDoList.git
+
+$ cd backend-ToDoList
+
+$ npm install
+
+$ npm run dev
+```

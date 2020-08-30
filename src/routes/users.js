@@ -4,9 +4,9 @@ const userController = require("../controllers/users");
 
 // users
 users.post("/add", userController.createUser);
-users.get("/getAll", userController.getUser);
-users.put("/:id", userController.updateUser);
-users.delete("/:id", userController.delete);
+users.get("/", userController.getUser);
+users.put("/edit/:id", userController.updateUser);
+users.delete("/delete/:id", userController.delete);
 users.get("/:id", userController.getUserById);
 users.post("/search", userController.searchUser);
 
